@@ -1,5 +1,11 @@
 package jala.University.Tarefas.service;
 
+import java.util.List;
+
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import jala.University.Tarefas.exception.ResourceNotFoundException;
 import jala.University.Tarefas.model.Categoria;
 import jala.University.Tarefas.model.StatusTarefa;
@@ -7,10 +13,6 @@ import jala.University.Tarefas.model.Tarefa;
 import jala.University.Tarefas.model.User;
 import jala.University.Tarefas.repository.RepositoryTarefas;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -69,5 +71,13 @@ public class ServiceTarefas {
         User currentUser = currentUserService.getCurrentUser();
         StatusTarefa statusTarefaTeste = StatusTarefa.valueOf(statusTarefa.getDescricao().toUpperCase());
         return repositoryTarefas.findByStatusAndUserId(statusTarefaTeste, currentUser.getId());
+    }
+
+    @Transactional
+    public void atualizarStatusComProcedure(Long id, String status) {
+        // keep permission/ownership checks consistent with existing logic
+        Tarefa tarefa = repositoryTarefas.findById(id).orElseThrow(() -> new ResourceNotFoundException("Tarefa nao identificada"));
+        repositoryTarefas.atualizarStatusComProcedure(tarefa.getId(), status);
+        // Optionally refresh/save entity if needed; we leave persistence to procedure
     }
 }

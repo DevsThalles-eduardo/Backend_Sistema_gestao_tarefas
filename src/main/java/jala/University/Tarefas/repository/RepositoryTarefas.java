@@ -1,13 +1,18 @@
 package jala.University.Tarefas.repository;
 
-import jala.University.Tarefas.model.StatusTarefa;
-import jala.University.Tarefas.model.Tarefa;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import jala.University.Tarefas.model.StatusTarefa;
+import jala.University.Tarefas.model.Tarefa;
 
 @Repository
 public interface RepositoryTarefas extends JpaRepository<Tarefa, Long> {
@@ -24,4 +29,9 @@ public interface RepositoryTarefas extends JpaRepository<Tarefa, Long> {
     long countByCategoriaId(long idCategoria);
 
     long countByPrioridadeId(Long idPrioridade);
+
+    @Modifying
+    @Transactional
+    @Query(value = "CALL sp_atualizar_status_tarefa(:id, :status)", nativeQuery = true)
+    void atualizarStatusComProcedure(@Param("id") Long id, @Param("status") String status);
 }

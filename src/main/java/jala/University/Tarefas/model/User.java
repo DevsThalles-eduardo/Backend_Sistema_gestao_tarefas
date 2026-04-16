@@ -1,6 +1,13 @@
 package jala.University.Tarefas.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -17,11 +24,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
-@Table(name = "users")
+@Table(name = "Users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -47,6 +51,7 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "id_usuario"))
     @Column(name = "role")
+    @OnDelete(action= OnDeleteAction.CASCADE)
     private List<String> roles = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")

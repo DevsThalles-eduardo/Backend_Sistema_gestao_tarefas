@@ -1,6 +1,9 @@
 package jala.University.Tarefas.model;
 
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -8,6 +11,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
@@ -17,10 +21,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name = "Tarefa")
+@Table(name = "Tarefa",
+indexes = {
+        @Index(name = "idx_status", columnList = "status"),
+        @Index(name = "idx_categoria", columnList = "id_categoria"),
+        @Index(name = "idx_prioridade", columnList = "id_prioridade"),
+        @Index(name = "idx_status_categoria", columnList = "status, id_categoria")
+    })
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
