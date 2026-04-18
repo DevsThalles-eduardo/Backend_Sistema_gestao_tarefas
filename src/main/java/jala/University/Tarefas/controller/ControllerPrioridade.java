@@ -1,9 +1,7 @@
 package jala.University.Tarefas.controller;
 
-import jala.University.Tarefas.dto.PrioridadeDTO;
-import jala.University.Tarefas.model.Prioridade;
-import jala.University.Tarefas.service.ServicePrioridade;
-import lombok.AllArgsConstructor;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import jala.University.Tarefas.dto.PrioridadeDTO;
+import jala.University.Tarefas.model.Prioridade;
+import jala.University.Tarefas.service.ServicePrioridade;
+import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/Prioridade")
@@ -34,11 +35,6 @@ public class ControllerPrioridade {
     @GetMapping
     public List<Prioridade> findAll() {
         return servicePrioridade.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public Prioridade findById(@PathVariable(name = "id") long idPrioridade) {
-        return servicePrioridade.findById(idPrioridade);
     }
 
     @PutMapping("/{id}")

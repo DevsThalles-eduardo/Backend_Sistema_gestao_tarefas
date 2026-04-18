@@ -23,6 +23,7 @@ O backend oferece:
 - PostgreSQL
 - JWT com `java-jwt`
 - Lombok
+- Springdoc OpenAPI / Swagger UI
 
 ## Estrutura do projeto
 

@@ -53,7 +53,7 @@ public ResponseEntity<ResponseDTO> register(@RequestBody ResgisterRequestDTO bod
     newUser.setName(body.name());
     newUser.setEmail(body.email());
 
-    // 🔥 IMPORTANTE: NÃO criptografar aqui
+
     newUser.setPassword(body.password());
 
     newUser.setProvider("LOCAL");

@@ -1,5 +1,4 @@
 /home/thalles/Documentos/PROGRAMAÇÃO/BANCO DE DADOS 2/CAPSTONE/Backend-Tarefas/src/main/java/jala/University/Tarefas/Infra/security/CustomUserDetailsService.java
-/home/thalles/Documentos/PROGRAMAÇÃO/BANCO DE DADOS 2/CAPSTONE/Backend-Tarefas/src/main/java/jala/University/Tarefas/Infra/security/DataInitializer.java
 /home/thalles/Documentos/PROGRAMAÇÃO/BANCO DE DADOS 2/CAPSTONE/Backend-Tarefas/src/main/java/jala/University/Tarefas/Infra/security/SecurityConfig.java
 /home/thalles/Documentos/PROGRAMAÇÃO/BANCO DE DADOS 2/CAPSTONE/Backend-Tarefas/src/main/java/jala/University/Tarefas/Infra/security/SecurityFilter.java
 /home/thalles/Documentos/PROGRAMAÇÃO/BANCO DE DADOS 2/CAPSTONE/Backend-Tarefas/src/main/java/jala/University/Tarefas/Infra/security/TokenService.java
