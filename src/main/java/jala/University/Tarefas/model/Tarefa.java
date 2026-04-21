@@ -38,6 +38,7 @@ public class Tarefa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_tarefa")
     private Long id;
 
     @Column(nullable = false, length = 50)

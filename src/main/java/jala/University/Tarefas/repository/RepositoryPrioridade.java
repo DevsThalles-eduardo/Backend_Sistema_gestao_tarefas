@@ -1,9 +1,10 @@
 package jala.University.Tarefas.repository;
 
-import jala.University.Tarefas.model.Prioridade;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
+import jala.University.Tarefas.model.Prioridade;
 
 public interface RepositoryPrioridade extends JpaRepository<Prioridade, Long> {
 

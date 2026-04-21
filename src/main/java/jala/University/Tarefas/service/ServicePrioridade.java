@@ -1,14 +1,15 @@
 package jala.University.Tarefas.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import jala.University.Tarefas.exception.BusinessException;
 import jala.University.Tarefas.exception.ResourceNotFoundException;
 import jala.University.Tarefas.model.Prioridade;
 import jala.University.Tarefas.repository.RepositoryPrioridade;
 import jala.University.Tarefas.repository.RepositoryTarefas;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @AllArgsConstructor
