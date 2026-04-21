@@ -11,7 +11,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
@@ -22,13 +21,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Tarefa",
-indexes = {
-        @Index(name = "idx_status", columnList = "status"),
-        @Index(name = "idx_categoria", columnList = "id_categoria"),
-        @Index(name = "idx_prioridade", columnList = "id_prioridade"),
-        @Index(name = "idx_status_categoria", columnList = "status, id_categoria")
-    })
+@Table(name = "Tarefa")
 
 @AllArgsConstructor
 @NoArgsConstructor

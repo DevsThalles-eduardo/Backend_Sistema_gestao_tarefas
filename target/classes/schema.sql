@@ -20,10 +20,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS user_roles (
     id_usuario VARCHAR(50) NOT NULL,
     role VARCHAR(100) NOT NULL,
-    CONSTRAINT fk_user_roles_user 
-        FOREIGN KEY (id_usuario) 
-        REFERENCES users(id_usuario) 
-        ON DELETE CASCADE
+    CONSTRAINT fk_user_roles_user FOREIGN KEY (id_usuario) REFERENCES users(id_usuario) ON DELETE CASCADE
 );
 
 -- =========================================
@@ -58,8 +55,7 @@ CREATE TABLE IF NOT EXISTS tarefa (
     status VARCHAR(50),
     id_usuario VARCHAR(50) NOT NULL,
 
-    CONSTRAINT fk_tarefa_prioridade 
-        FOREIGN KEY (id_prioridade) 
+    CONSTRAINT fk_tarefa_prioridade FOREIGN KEY (id_prioridade) 
         REFERENCES prioridade(id_prioridade) 
         ON DELETE SET NULL,
 

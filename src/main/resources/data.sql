@@ -5,7 +5,7 @@ SELECT v FROM (VALUES ('ALTA'), ('MÉDIA'), ('BAIXA')) AS t(v)
 WHERE NOT EXISTS (SELECT 1 FROM prioridade);
 
 INSERT INTO categoria (tipo_categoria)
-SELECT v FROM (VALUES ('Geral')) AS t(v)
+SELECT v FROM (VALUES ('GERAL')) AS t(v)
 WHERE NOT EXISTS (SELECT 1 FROM categoria);
 
 -- =========================================
