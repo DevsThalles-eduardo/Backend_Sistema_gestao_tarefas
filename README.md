@@ -293,13 +293,6 @@ Responsabilidades:
 
 Consultas importantes:
 
-- `findByUserId`
-- `findByIdAndUserId`
-- `findByCategoriaIdAndUserId`
-- `findByStatusAndUserId`
-- `countByCategoriaId`
-- `countByPrioridadeId`
-- `atualizarStatusComProcedure`
 
 ### `RepositoryCategoria`
 
@@ -376,12 +369,7 @@ Metodos internos importantes:
 - `update`
 - `delete`
 - `findByIdCategoria`
-- `findByStatus`
-- `atualizarStatusComProcedure`
 
-Observacao:
-
-- existem metodos internos para filtro por categoria, por status e procedure, mas eles nao estao expostos por endpoint nos controllers atuais
 
 ### `ServiceCategoria`
 
